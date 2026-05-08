@@ -1,7 +1,7 @@
 # SSH config example
 Host kali
     HostName 100.x.x.x
-    User kali
+    User kalie
     IdentityFile ~/.ssh/id_rsa
 
 Host ubuntu-server
