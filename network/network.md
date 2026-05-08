@@ -64,4 +64,5 @@ Sieć oparta na tailscale umożliwiająca bezpieczny dostęp do urządzeń.
 
 ## Notatki
 
-Jest to środowisko do nauki i będzie się zmieniać.
+Maszyny się widzą, jest między nimi komunikacja zarówno dzięki tailscale oraz z routera lokalnego.
+Ssh działa poprawnie między maszynami.
