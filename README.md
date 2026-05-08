@@ -1,4 +1,7 @@
-# Network
-how does my network work
-so it's simply instruction for my own network, starting from all of my machines and diffrent types of network connection.
-then explaining my adapters, my communications, tailscale and other, we will see what comes next
+# Readme
+Więc tutaj będę sobie komentować moje sprawy co się dzieją u mnie w sieci.
+Na początku musiałem zrobić dobrą komunikację między urządzeniami i maszynami. Więc pierwszym elementem jest network oraz Tailscale
+- [Network](./network/Readme.md)
+- [Network](./tailscale/tailscale.md)
+Następne rzeczy to będzie wykorzystanie narzędzi SOC do analizy ruchu w mojej sieci. Wykorzstanie kali żeby był jakiś przeciwnik.
+- [Network](./SOC/README.md)
