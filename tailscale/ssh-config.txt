@@ -1,0 +1,10 @@
+# SSH config example
+Host kali
+    HostName 100.x.x.x
+    User kali
+    IdentityFile ~/.ssh/id_rsa
+
+Host ubuntu-server
+    HostName 100.x.x.x
+    User ubunut
+    IdentityFile ~/.ssh/id_rsa
