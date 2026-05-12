@@ -48,12 +48,14 @@ Tailscale to narzędzie VPN, które pozwala łączyć urządzenia w jedną prywa
 
 ## Problemy / błędy
 
-czasami nie chciało sięza pierwszym razem wskoczyć, więc musiałem się dwa razy logować, i na stronie tailscale admin też miałem urządzenia nieaktywne mimio że włączyłem zainstalowałem, włączyłem i podłączyłem go
+1. czasami nie chciało sięza pierwszym razem wskoczyć, więc musiałem się dwa razy logować, i na stronie tailscale admin też miałem urządzenia nieaktywne mimio że włączyłem zainstalowałem, włączyłem i podłączyłem go
 
+2. Na Windowsie nie chciało mnie przepuścić na logowaniu ssh bez użycia hasła. Wyrzucało mi błąd 
 
 ### Rozwiązanie:
-wyłącz włącz xd
+1. wyłącz włącz xd
 
+2. ścieżka z auth_keys jest tutaj C:\ProgramData\ssh\sshd_config a nie jak by się wydawało że C:\Users\User\.ssh\auth_keys
 ---
 
 ## Komendy (do zapamiętania)
