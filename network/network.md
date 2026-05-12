@@ -1,68 +1,48 @@
-# Przegląd sieci
+# Network Overview
 
-Ten dokument to moja obecna struktura sieci, składa się z trzech głównych części:
-- sieć domowa (router od dostawcy)
-- sieć laboratoryjna (maszyny wirtualne)
-- sieć VPN (Tailscale)
+## 1. ISP / Home Network
 
----
+The base layer provided by the internet service provider.
 
-## 1. Sieć domowa (router ISP)
-
-Jest to podstawowa sieć dostarczona przez operatora internetu.
-
-- działa jako brama do internetu
-- ma ograniczone możliwości konfiguracji (zarządzana przez dostawcę)
-- wszystkie fizyczne urządzenia łączą się przez tę sieć
-
-Rola:
-- dostęp do internetu
-- baza dla pozostałych środowisk
+- Acts as the internet gateway for all physical devices
+- Limited configuration options (managed by ISP)
+- All physical machines connect through this network
 
 ---
 
-## 2. Sieć laboratoryjna (maszyny wirtualne)
+## 2. Lab Network (Virtual Machines)
 
-To środowisko służy do nauki, testów i eksperymentów.
+An isolated environment running on a local hypervisor, used for learning and experimentation.
 
-### Maszyny:
-- Ubuntu
-- Ubuntu Server
-- Kali Linux
-- (planowane) pfSense
+**Machines:**
 
-### Cel:
-- nauka sieci
-- administracja systemami
-- przygotowanie pod przyszły SOC
----
+| VM | OS |
+|---|---|
+| Ubuntu Desktop | Ubuntu |
+| Ubuntu Server | Ubuntu Server |
+| Kali Linux | Kali |
+| pfSense | pfSense *(planned)* |
 
-## 3. Sieć VPN (Tailscale)
+**Adapter modes in use:**
+- **Bridge** — VM is visible on the home LAN, gets its own IP
+- **NAT** — VM has outbound internet access only, not reachable from LAN
 
-Sieć oparta na tailscale umożliwiająca bezpieczny dostęp do urządzeń.
-
-### Funkcje:
-- dostęp do maszyn spoza domu
-- szyfrowana komunikacja
-- brak potrzeby wystawiania portów na świat
-
-### Zastosowanie:
-- zdalny dostęp (SSH)
-- zarządzanie maszynami
-- dostęp do labu z dowolnego miejsca
+**Communication:**
+- VMs can see and reach each other 
+- SSH works correctly between machines 
+- Internet access confirmed on relevant VMs 
 
 ---
 
-## Plany na przyszłość
+## 3. VPN Layer (Tailscale)
 
-- dodanie pfSense (firewall, segmentacja sieci)
-- budowa podstawowego SOC (monitoring, logi)
-- poprawa bezpieczeństwa
-- lepsza dokumentacja przepływu ruchu
+A Tailscale mesh network runs on top of the physical and virtual infrastructure, enabling secure remote access. Documented in detail in [`tailscale/`](../tailscale/tailscale.md).
 
 ---
 
-## Notatki
+## Planned Additions
 
-Maszyny się widzą, jest między nimi komunikacja zarówno dzięki tailscale oraz z routera lokalnego.
-Ssh działa poprawnie między maszynami.
+- [ ] Deploy pfSense as a virtual firewall between lab segments
+- [ ] Proper network segmentation (separate VLANs for attack/defense VMs)
+- [ ] Network traffic flow diagram
+- [ ] Document IP address scheme
