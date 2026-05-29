@@ -15,3 +15,6 @@ LAN - em1 - v4 - 192.168.1.1/24 - This one i set in installation
 # lesson learned
 I wanted to see if my local computer see this machine so i pinged 18.30 to 18.147 and reqest timed out.
 That was weird but to my suprise when i entered the firewall logs i noticed that there was connection for ICMP but was refused
+# Configuration of pfSense
+To open web interface, but only in LAN. I couldn't open it with WAN address
+I switched option to allow for ssh connections, and we can easily connect through ssh now.
